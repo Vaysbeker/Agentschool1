@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +31,7 @@
         </ul>
 
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown user-menu">
+             <li class="nav-item dropdown user-menu">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                     <img src="https://infyom.com/images/logo/blue_logo_150x150.jpg"
                          class="user-image img-circle elevation-2" alt="User Image">
@@ -58,11 +59,11 @@
                             @csrf
                         </form>
                     </li>
-                </ul>
+                  </ul>
             </li>
         </ul>
     </nav>
-
+</div>
     <!-- Left side column. contains the logo and sidebar -->
 @include('layouts.sidebar')
 
@@ -74,7 +75,8 @@
     </div>
 
     <!-- Main Footer -->
-@include('layouts.footer')
+<div>
+    @include('layouts.footer')
 </div>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script charset="utf8" src="https://www.internet-technologies.ru/wp-content/uploads//cdn.datatables.net/1.10.15/js/<span class="strong">jquery.dataTables.js</span>"></script>
@@ -90,8 +92,5 @@
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
 
-@yield('third_party_scripts')
-
-@stack('page_scripts')
 </body>
 </html>

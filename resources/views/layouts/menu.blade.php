@@ -168,10 +168,25 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../forms/editors.html" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Пользователи</p>
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-tree"></i>
+                        <p>
+                            Пользователи
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
                     </a>
+
+                    <ul class="nav nav-treeview" style="display: none;">
+                        @guest
+                            <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
+                            <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
+                        @else
+                            <li><a class="nav-link" href="{{ route('users.index') }}">{{trans('admin.Users Management')}}</a></li>
+                            <li><a class="nav-link" href="{{ route('roles.index') }}">Роли</a></li>
+                            <li><a class="nav-link" href="{{ route('products.index') }}">Товары</a></li>
+                        @endguest
+
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a href="../forms/validation.html" class="nav-link">

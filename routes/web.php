@@ -16,6 +16,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['middleware' => ['auth']], function() {
+    Route::resource('roles', RoleController::class);
+    Route::resource('users', UserController::class);
+    Route::resource('products', ProductController::class);
+});
+
 Route::get('/admin/newagency', function () {
     return view('admin.newagency');
 })->name('new-agency');
@@ -27,6 +38,3 @@ Route::post('/admin/agency/submit','AgencyController@submit' )->name('agency-con
 Route::get('/admin/agency/agencies','AgencyController@allAgency' )->name('agency');
 Route::get('/admin/agencies','AgencyController@index')->name('agency-all');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
