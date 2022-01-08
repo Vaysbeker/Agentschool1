@@ -18,7 +18,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="{{ url('/home') }}"><b>Учебный центр Агенттерра, страница входа</b></a>
+        <a href="{{ url('/home') }}">Учебный центр Агенттерра,</br> страница входа</b></a>
     </div>
     <!-- /.login-logo -->
 
@@ -72,11 +72,9 @@
             </form>
 
             <p class="mb-1">
-                <a href="{{ route('password.request') }}">Я забыл мой пароль</a>
+                <a href="{{ route('password.request') }}">{{trans('admin.I forgot my password')}}</a>
             </p>
-            <p class="mb-0">
-                <a href="{{ route('register') }}" class="text-center">Зарегистрируйте новое членство</a>
-            </p>Sign in to start your session
+
 
 
         </div>

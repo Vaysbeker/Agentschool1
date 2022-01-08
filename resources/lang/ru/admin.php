@@ -1,16 +1,35 @@
 <?php
 return[
     'agencies-title' => 'Список агентств',
+    'home'=>'Главная',
+    'Log in'=>'Войти',
     'region' => 'Область',
     'city' => 'Город',
     'name'=> 'Имя',
+    'name_roles' => 'Задайте название Роли',
     'password' => 'Пароль',
     'create new password' => 'Создать новый пароль',
+    'I forgot my password' => 'Вспомнить пароль',
     'Role updated successfully'=>'Роль успешно обновлена',
     'Role deleted successfully' =>'Роль успешно удалена',
+    'Edit Role' => 'Редактировать права доступа Роли',
     'Users Management' => 'Управление пользователями',
+    'Roles Management' => 'Управление ролями',
     'Create New User' => 'Добавить нового пользователя',
+    'Create New Roles' => 'Добавить новую роль',
     'Confirm Password' => 'Подтвердите пароль',
-    'Role'=>'Роль пользователя'
+    'Role'=>'Роль пользователя',
+    'Roles'=>'Роли пользователя',
+    'Action' => 'Действия',
+    'Show' =>'Подробнее',
+    'Edit' => 'Редактировать',
+    'Delete' => 'Удалить',
+    'Close' => 'Закрыть',
+    'Member since'=> 'Зарегистрирован',
+    'Submit'=> 'Изменить',
+    'Sign out' => 'Выйти',
+    'Permission' => 'Разрешения',
+    'More info' => 'Подробнее',
+
 
 ];

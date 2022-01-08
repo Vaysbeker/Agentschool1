@@ -33,7 +33,7 @@
 
             <div class="form_group">
                 <label for="agency_city">Введите город работы Агентства</label>
-                <input type="text" name="agency_city" placeholder="Введите город работы Агентства" id="name" class="form-control">
+                <input type="text" class="form-control" name="city" placeholder="Введите город работы Агентства" id="city" class="form-control">
             </div>
 
             <div class="form_group">
@@ -47,4 +47,16 @@
         </div>
     </div>
 </div>
+<script>
+        $(function () {
+            $('[name="city"]').suggestions({
+                token: "9070e60f3a09225d8cc393d7bae22de473f90c68",
+                type: "ADDRESS",
+                bounds: "city-settlement",
+                locations: {
+                    region: $("#region").text()
+                },
+            });
+        });
+</script>
 @endsection

@@ -6,7 +6,7 @@
         <span class="brand-text font-weight-light">{{ config('app.name') }}</span>
     </a>
 
-    <div class="sidebar">
+    <div class="<div class="collapse navbar-collapse" id="navbar-blog">">
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 @include('layouts.menu')

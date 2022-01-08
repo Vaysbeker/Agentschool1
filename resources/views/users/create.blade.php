@@ -56,6 +56,12 @@
                 {!! Form::select('roles[]', $roles,[], array('class' => 'form-control','multiple')) !!}
             </div>
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Выберете агентство:</strong>
+                {!! Form::select('agency_id[]', $agency_id,[], array('class' => 'form-control','multiple')) !!}
+            </div>
+        </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
             <a class="btn btn-primary" href="{{ route('users.index') }}"> Вернуться назад</a>
             <button type="submit" class="btn btn-primary">Создать нового пользователя</button>

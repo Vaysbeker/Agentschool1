@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dc6a77333186d2b0100dd901e292eeef",
+    "content-hash": "8526810dc54a3d0af47ec5e5e229eebb",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -196,6 +196,50 @@
                 "source": "https://github.com/dflydev/dflydev-dot-access-data/tree/v3.0.1"
             },
             "time": "2021-08-13T13:06:58+00:00"
+        },
+        {
+            "name": "djmitry/laravel-youtube-video",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/djmitry/laravel-youtube-video.git",
+                "reference": "6c66b9622bc835f3173c550e5f4232816693c885"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/djmitry/laravel-youtube-video/zipball/6c66b9622bc835f3173c550e5f4232816693c885",
+                "reference": "6c66b9622bc835f3173c550e5f4232816693c885",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Djmitry\\Youtube\\YoutubeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Djmitry\\Youtube\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dmitry Zagainov",
+                    "email": "d.i.ma.92@mail.ru"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/djmitry/laravel-youtube-video/issues",
+                "source": "https://github.com/djmitry/laravel-youtube-video/tree/master"
+            },
+            "time": "2019-05-02T14:02:03+00:00"
         },
         {
             "name": "doctrine/inflector",
@@ -496,6 +540,73 @@
                 }
             ],
             "time": "2020-12-29T14:50:06+00:00"
+        },
+        {
+            "name": "fomvasss/laravel-dadata",
+            "version": "2.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fomvasss/laravel-dadata.git",
+                "reference": "e0136b92e26a159adf69da8a7962de5a5969d7ea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fomvasss/laravel-dadata/zipball/e0136b92e26a159adf69da8a7962de5a5969d7ea",
+                "reference": "e0136b92e26a159adf69da8a7962de5a5969d7ea",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "guzzlehttp/guzzle": ">=6.2.0",
+                "php": ">=5.5.0"
+            },
+            "type": "package",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Fomvasss\\Dadata\\DadataServiceProvider"
+                    ],
+                    "aliases": {
+                        "DadataSuggest": "Fomvasss\\Dadata\\Facades\\DadataSuggest",
+                        "DadataClean": "Fomvasss\\Dadata\\Facades\\DadataClean"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Fomvasss\\Dadata\\": "src"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "WebWest",
+                    "role": "Company"
+                },
+                {
+                    "name": "Fomin Vasyl",
+                    "email": "fomvasss@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Dadata API client (https://dadata.ru)",
+            "keywords": [
+                "DaData",
+                "autocomplete",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/fomvasss/laravel-dadata/issues",
+                "source": "https://github.com/fomvasss/laravel-dadata/tree/2.2.2"
+            },
+            "time": "2019-11-08T07:54:56+00:00"
         },
         {
             "name": "fruitcake/laravel-cors",
@@ -8209,12 +8320,14 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "djmitry/laravel-youtube-video": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^7.3|^8.0"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.2.0"
 }

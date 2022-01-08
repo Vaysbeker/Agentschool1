@@ -3,7 +3,7 @@
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
-        <li class="nav-item">
+        <li class="nav-item navbar-toggler data-toggle="collapse"">
             <a href="" class="nav-link">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
@@ -26,7 +26,7 @@
                 </li>
             </ul>
         </li>
-        <li class="nav-item">
+        <li class="nav-item navbar-toggler">
             <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-edit"></i>
                 <p>
@@ -34,6 +34,7 @@
                     <i class="fas fa-angle-left right"></i>
                 </p>
             </a>
+
             <ul class="nav nav-treeview">
                 <li class="nav-item">
                     <a href="../forms/general.html" class="nav-link">
@@ -75,8 +76,9 @@
                     </a>
                 </li>
             </ul>
+
         </li>
-        <li class="nav-item">
+        <li class="nav-item navbar-toggler">
             <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-edit"></i>
                 <p>
@@ -111,7 +113,7 @@
                 </li>
             </ul>
         </li>
-        <li class="nav-item">
+        <li class="nav-item navbar-toggler">
             <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-edit"></i>
                 <p>
@@ -146,7 +148,7 @@
                 </li>
             </ul>
         </li>
-        <li class="nav-item">
+        <li class="nav-item navbar-toggler">
             <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-edit"></i>
                 <p>
@@ -167,7 +169,7 @@
                         <p>Справочники</p>
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item navbar-toggler">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-tree"></i>
                         <p>
@@ -182,7 +184,7 @@
                             <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
                         @else
                             <li><a class="nav-link" href="{{ route('users.index') }}">{{trans('admin.Users Management')}}</a></li>
-                            <li><a class="nav-link" href="{{ route('roles.index') }}">Роли</a></li>
+                            <li><a class="nav-link" href="{{ route('roles.index') }}">{{trans('admin.Roles Management')}}</a></li>
                             <li><a class="nav-link" href="{{ route('products.index') }}">Товары</a></li>
                         @endguest
 

@@ -20,8 +20,10 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'agency_id',
         'name',
         'email',
+        'user_city',
         'password',
     ];
     public function getRoleNames()
@@ -47,4 +49,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    /**
+     * Связь модели User с моделью Course, позволяет получить все
+     * посты пользователя
+     */
+    public function posts() {
+        return $this->hasMany(Course::class);
+    }
 }

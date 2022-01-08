@@ -23,73 +23,34 @@ class CoursesController extends Controller
      */
     public function index()
     {
-        $courses =DB::select('select * from courses');
-        return view('admin.courses',['courses'=>$courses]);
+        $courses = Post::orderBy('created_at', 'desc')->paginate(5);
+        return view('course.index', compact('courses'));
     }
-
-    /**
+        /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function course(Course $course) {
+        return view('courses.course', compact('course'));
+    }
+    /**
+     * Список постов блога выбранной категории
+     */
+    public function category(Category $category) {
+        $courses = $category->courses()
+            ->orderBy('created_at', 'desc')
+            ->paginate(5);
+        return view('courses.category', compact('category', 'courses'));
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * Список постов блога выбранного автора
      */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\courses  $courses
-     * @return \Illuminate\Http\Response
-     */
-    public function show(courses $courses)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\courses  $courses
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(courses $courses)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\courses  $courses
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, courses $courses)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\courses  $courses
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(courses $courses)
-    {
-        //
+    public function author(User $user) {
+        $courses = $user->courses()
+            ->orderBy('created_at', 'desc')
+            ->paginate(5);
+        return view('courses.author', compact('user', 'courses'));
     }
 }

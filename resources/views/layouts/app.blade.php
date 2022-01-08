@@ -20,7 +20,7 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
+<div>
     <!-- Main Header -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
         <!-- Left navbar links -->
@@ -33,27 +33,27 @@
         <ul class="navbar-nav ml-auto">
              <li class="nav-item dropdown user-menu">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                    <img src="https://infyom.com/images/logo/blue_logo_150x150.jpg"
-                         class="user-image img-circle elevation-2" alt="User Image">
+                    <!--<img src="https://infyom.com/images/logo/blue_logo_150x150.jpg"
+                         class="user-image img-circle elevation-2" alt="User Image">-->
                     <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                    <!-- User image -->
+
                     <li class="user-header bg-primary">
                         <img src="https://infyom.com/images/logo/blue_logo_150x150.jpg"
                              class="img-circle elevation-2"
                              alt="User Image">
                         <p>
                             {{ Auth::user()->name }}
-                            <small>Member since {{ Auth::user()->created_at->format('M. Y') }}</small>
+                            <small>{{trans('admin.Member since')}} {{ Auth::user()->created_at->format('M. Y') }}</small>
                         </p>
                     </li>
                     <!-- Menu Footer-->
                     <li class="user-footer">
-                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                        <a href="{{route('profile')}}" class="btn btn-default btn-flat">Profile</a>
                         <a href="#" class="btn btn-default btn-flat float-right"
                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            Sign out
+                            {{trans('admin.Sign out')}}
                         </a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
@@ -67,6 +67,27 @@
     <!-- Left side column. contains the logo and sidebar -->
 @include('layouts.sidebar')
 
+@if ($message = session('success'))
+    <div class="alert alert-success alert-dismissible mt-0" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Закрыть">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {{ $message }}
+    </div>
+@endif
+
+@if ($errors->any())
+    <div class="alert alert-danger alert-dismissible mt-4" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Закрыть">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <ul class="mb-0">
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <section class="content">
@@ -91,6 +112,7 @@
 <script src="../../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
-
+@section('js')
+@endsection
 </body>
 </html>
