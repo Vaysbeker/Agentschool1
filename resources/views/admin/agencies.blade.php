@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 @section('title-block'){{trans('admin.agencies-title')}}@endsection
 @section('content')
     <h1>Cписок агентств</h1>

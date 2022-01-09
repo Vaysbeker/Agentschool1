@@ -1,4 +1,4 @@
-@extends('layouts.User.appuser')
+@extends('adminlte::page')
 @section('title-block') Урок №1 @endsection
 @section('content')
  <div class="container align-content-center">

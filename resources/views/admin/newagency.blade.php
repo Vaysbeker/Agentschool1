@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 @section('title_block')Добавить новое агентство @endsection
 @section('content')
 <div class="row">
@@ -33,7 +33,7 @@
 
             <div class="form_group">
                 <label for="agency_city">Введите город работы Агентства</label>
-                <input type="text" class="form-control" name="city" placeholder="Введите город работы Агентства" id="city" class="form-control">
+                <input type="text" class="form-control" name="agency_city" placeholder="Введите город работы Агентства" id="agency_city" class="form-control">
             </div>
 
             <div class="form_group">
@@ -49,7 +49,7 @@
 </div>
 <script>
         $(function () {
-            $('[name="city"]').suggestions({
+            $('[name="agency_city"]').suggestions({
                 token: "9070e60f3a09225d8cc393d7bae22de473f90c68",
                 type: "ADDRESS",
                 bounds: "city-settlement",
